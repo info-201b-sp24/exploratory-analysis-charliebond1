@@ -123,10 +123,63 @@ Here's an example of how to run an R script inside an RMarkdown file:
 ```
 
 ### Chart 2
+# Author: Sirinya Hirunviriya
 
-Include a chart
 
-Describe why you chose this chart and what information it reveals
+#All the required packages
+library(dplyr)
+library(ggplot2)
+library(scales)
+library(plotly)
+
+#Downloading csv data into R
+wnba_data <- read.csv("Desktop/info201/exploratory-analysis-charliebond1/CSVs/simple_wnba.csv")
+nba_data <- read.csv("Desktop/info201/exploratory-analysis-charliebond1/CSVs/simple_nba.csv")
+ 
+#Summerize data
+nba_summary <- summary(nba_data$Salary)
+wnba_summary <- summary(wnba_data$X2024.SALARY)
+
+#Print data summary 
+print(nba_summary)
+print(wnba_summary)
+
+#Adjust Y axis for better reading going up by 1,000,000
+y_max <- max(nba_summary[6], wnba_summary[6]) * 1.1  
+y_breaks <- seq(0, y_max, by = 1000000) 
+
+#create summary label by vector
+summary_labels <- data.frame(
+  x = rep(c(1, 2), each = 5),
+  y = c(wnba_summary[c(2, 4, 3, 6, 1)], nba_summary[c(2, 4, 3, 6, 1)]),
+  label = rep(c("Q1", "Q3", "Median", "Max", "Min"), 2)
+)
+
+# Using ggplot2 to construct a box plot
+p <- ggplot() +
+  geom_boxplot(data = wnba_data, aes(x = factor(1), y = X2024.SALARY), width = 0.7, fill = "lightgreen", alpha = 0.7) +
+  geom_boxplot(data = nba_data, aes(x = factor(2), y = Salary), width = 0.7, fill = "lightblue", alpha = 0.7) +
+  ggtitle("Comparison of NBA and WNBA Player Salaries") +
+  ylab("Salary ($)") +
+  scale_y_continuous(labels = scales::comma, breaks = y_breaks, limits = c(0, y_max)) + # Set y-axis limits for better visibility
+  scale_x_discrete(labels = c("WNBA", "NBA")) +
+  geom_text(data = summary_labels, aes(x = x, y = y, label = label), vjust = -0.5, size = 3) +
+  theme_minimal()
+
+# Make it more readible by making it adjustable by convert ggplot2 plot to an interactive plotly plot so that it can be zoom and hover
+interactive_plot <- ggplotly(p)
+
+# Print the interactive plot
+print(interactive_plot)
+
+```
+
+Purpose:
+The box plot offers a side-by-side comparison of WNBA and NBA players, providing insights into the statistical distribution of WNBA and NBA salaries. By examining statistical data like the interquartile range (IQR), median, minimum, and maximum salaries, provided in the box plot, we can gain a better evaluate the extent extent of the gender pay gap within professional basketball leagues.
+
+Insights:
+The box plot underscores that gender pay gap still remains as a persistent issue in professional basketball. Notably, the maximum salary of WNBA remains significantly lower than that of the minimum salary of NBA player, showing a substantial disparity in earning potential between female and male athlete. This disparity underscores the significant difference in earning potential between female and male athletes. Furthermore, the wider Interquartile Range (IQR) among NBA players also sugguest a broader spectrum of earnings within the league. This IQR range indicates how much more important market demand, skill, and reputation are in the NBA than they are in the WNBA, where players all make comparable salaries despite their skill and reputation. Additionally, the presence of outliers, such as the NBA player with a maximum earning of 50 million, further emphasizes the varied earning profiles within the NBA, while WNBA players tend to earn within a narrower range. All these statistical data underscores ongoing need for efforts to reduce the inequality in gender pay gap in sports.
+
 
 ### Chart 3
 
