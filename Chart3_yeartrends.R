@@ -50,5 +50,5 @@ wnba_nba_avg_salary_chart_df <- as.data.frame(as.table(wnba_nba_avg_salary_chart
 colnames(wnba_nba_avg_salary_chart_df) <- c("Year", "League", "Value")
 ggplot(wnba_nba_avg_salary_chart_df, aes(x = League, y = Value, fill = Year)) +
   geom_bar(stat = "identity", position = position_dodge()) +
-  labs(title = "Increase in Salary from 2016 to 2024", x = "League", y = "Salary") +
+  labs(title = "Increase in Salary from 2016 to 2024", x = "League", y = "Fold Change in Salary") +
   theme_minimal()
