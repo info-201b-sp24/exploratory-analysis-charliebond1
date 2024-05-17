@@ -104,6 +104,8 @@ More broadly, one challenge with using this data is that it only addresses one n
 
 Write a summary paragraph of findings that includes the 5 values calculated from your summary information R script
 
+# After performing a preliminary analysis of the data and calculating a few values, the difference between female and male players' earnings is astonishing. Beginning with the average salary within each league, we found that the average salary in the NBA was over $8,939,655, while in the WNBA, the average salary was a mere $105,000. Taking a closer look, we compared the amount of money earned per point scored and per minute played across both teams. We determined that on average, NBA players made $394,636,30 per point, whereas WNBA players only earned $2,865.88 for every point they scored. Additionally, NBA players earned $243,955.60 for every minute of play, while female players in the WNBA only made $2,077.02.
+
 ### Table
 
 Include a table of aggregate information
