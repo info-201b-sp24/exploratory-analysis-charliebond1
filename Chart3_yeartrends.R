@@ -17,16 +17,6 @@ View(nba_2024)
 nba_2016 <- read.csv("C:/Users/aever/Documents/INFO201/exploratory-analysis-charliebond1/CSVs/nba-stats_out.csv")
 View(nba_2016)
 
-# Create dataframes with salary only
-wnba_2024_salary <- wnba_2024["X2024.SALARY"]
-View(wnba_2024_salary)
-wnba_2016_salary <- wnba_2016["salary"]
-View(wnba_2016_salary)
-nba_2024_salary <- nba_2024["Salary"]
-View(nba_2024_salary)
-nba_2016_salary <- nba_2016["salary"]
-View(nba_2016_salary)
-
 # Find the average salary in each dataframe
 wnba_2024_salary_avg <- mean(wnba_2024$X2024.SALARY, na.rm = TRUE)
 print(wnba_2024_salary_avg)
@@ -55,7 +45,7 @@ rownames(wnba_nba_avg_salary_chart) <- c("2016", "2024")
 colnames(wnba_nba_avg_salary_chart) <- c("WNBA", "NBA")
 View(wnba_nba_avg_salary_chart)
 
-# Create a line graph comparing the change in salaries in each year
+# Create a bar graph comparing the change in salaries in each year
 wnba_nba_avg_salary_chart_df <- as.data.frame(as.table(wnba_nba_avg_salary_chart))
 colnames(wnba_nba_avg_salary_chart_df) <- c("Year", "League", "Value")
 ggplot(wnba_nba_avg_salary_chart_df, aes(x = League, y = Value, fill = Year)) +
