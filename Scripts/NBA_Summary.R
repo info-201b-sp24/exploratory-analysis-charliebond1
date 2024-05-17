@@ -8,7 +8,7 @@ library(ggplot2)
 library(readr)
 
 # Load Data
-nba_data <- read_csv("C:/Users/aever/Documents/INFO201/exploratory-analysis-charliebond1/CSVs/nba-stats_out.csv")
+nba_data <- read_csv("C:/Users/aever/Documents/INFO201/exploratory-analysis-charliebond1/NBA Player Salaries (2022-23 Season)_exported.csv")
 wnba_data <- read_csv("C:/Users/aever/Documents/INFO201/exploratory-analysis-charliebond1/CSVs/wnba-stats_out.csv")
 View(nba_data)
 View(wnba_data)

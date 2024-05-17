@@ -34,7 +34,7 @@ Through this analysis, our intention is to examine how a broad issue of gender i
 
 ### Related Work  
 
-In almost every workplace in the United States, the wage gap impacts how much women are paid compared to their male counterparts. Although this number has slowly been increasing since the mid-20th century, women still only earn 84 cents for every dollar that men earn (Haan, 2024). Although this degree of this disparity fluctuates between different career paths, it exists in all but a couple of workplaces. Previous studies conducted by Forbes advisors have shown that men earn up to 60 percent more than their female counterparts as real estate brokers, and 58 percent more as personal financial advisors (Haan, 2024). These numbers are even more jarring in the world of professional sports. In the NBA, male basketball players earn an average of 5 million dollars annually, which far overshadows female players’ measly annual salaries of $120,000 (Richard-Craven, 2024). According to Bloomberg Businessweek, viewership has increased exponentially in the last decade and a half, with over $75 million dollars in sponsorships accompanying this increase in exposure, but players’ salaries have largely stayed the same (Haque, 2023). This, along with the astonishing wage gap between the leagues, lends itself to a much larger issue of gender inequality in the workplace, and is something that needs to be addressed in order to ensure that female employees are getting justly compensated for their significant contributions to the workforce - from sports to real estate. 
+# In almost every workplace in the United States, the wage gap impacts how much women are paid compared to their male counterparts. Although this number has slowly been increasing since the mid-20th century, women still only earn 84 cents for every dollar that men earn (Haan, 2024). Although this degree of this disparity fluctuates between different career paths, it exists in all but a couple of workplaces. Previous studies conducted by Forbes advisors have shown that men earn up to 60 percent more than their female counterparts as real estate brokers, and 58 percent more as personal financial advisors (Haan, 2024). These numbers are even more jarring in the world of professional sports. In the NBA, male basketball players earn an average of 5 million dollars annually, which far overshadows female players’ measly annual salaries of $120,000 (Richard-Craven, 2024). According to Bloomberg Businessweek, viewership has increased exponentially in the last decade and a half, with over $75 million dollars in sponsorships accompanying this increase in exposure, but players’ salaries have largely stayed the same (Haque, 2023). This, along with the astonishing wage gap between the leagues, lends itself to a much larger issue of gender inequality in the workplace, and is something that needs to be addressed in order to ensure that female employees are getting justly compensated for their significant contributions to the workforce - from sports to real estate. 
 
 Haan, K. (n.d.). Gender pay gap statistics in 2024 – forbes advisor. Retrieved May 1, 2024, from 
 https://www.forbes.com/advisor/business/gender-pay-gap-statistics/
@@ -54,28 +54,27 @@ y-gap-with-wnba-alum-angel-mccoughtry/
 
 Where was the data found?
 
-The data was found by googling “WNBA vs NBA salary dataset” and clicking on the first link, which is a github page. 
-https://github.com/Bengis/nba-wnba-salary-gap?tab=readme-ov-file
+The data was found by googling “WNBA salary dataset" and "NBA salary dataset". The data we found for the Women's league is from herhoopstats.com, and the NBA data was found on gigasheet.com.
 
 Who Collected the data?
 
-This data was collected by Jose Ignacio Bengoachea Isasa, who has a Master of Data Science from UOC Open University of Catalonia. 
+The WNBA data was collected by technologists at Sportradar, a sports technology company affiliated with HerHoopStats. The NBA data was uploaded by a community contributor who put the data in CSV format, but the information is available to the public by the NBA.
 
 How was the data collected? 
 
-The author shows that he used a scrapping tool written in python to collect a series of performance stats and compensation for both the NBA and the WNBA, both of which are available from the associations themselves.  
+The data is made open to public, and was collected and formatted into a csv file by technologists from companies such as sportradar.
 
 Why was the data collected?  
 
-It’s possible that the data was collected to allow for analysis of salary disparities and other facts and figures within and between the professional basketball leagues in the United States.
+Typically, this data is collected for use by the media (such as sports announcers) and for sports betting purposes.
 
 How many observations (rows) are in your data?
 
-The data is technically split between the NBA and the WNBA, put together they can be viewed as one data set because they have the same kind of and number of features. The NBA dataset has 314 observations, while the WNBA has 165 observations, for a total of 479 observations.
+The WNBA has information on 130 players, and the NBA dataset has information on over 500 players. Combined, there are 630 observations.
 
 How many features (columns) are in the data?  
 
-There are 14 features.
+The original datasets had 27(WNBA) and 52(NBA) features, but we will condensed these to the 10 features we felt were most relevant to our analysis.
 
 What, if any, ethical questions or questions of power do you need to consider when working with this data?  
 
@@ -95,9 +94,9 @@ Our analysis could also highlight the severity of gender inequality to policymak
 
 ### Limitations & Challenges
 
-While the datasets are ideal in size and readability, they are both not the most recent, as they only include figures derived from the 2016-2017 NBA season and the 2017 WNBA season. This might make it difficult to speculate on the current gender pay gap, as it changes year by year. Additionally, given how niche the professional sports industry is, it is possible that the trend in the wage gap in this area of work differs from that of other industries. This poses an additional challenge for applying our analysis to current trends in the wage gap.
+While the datasets are ideal in size and readability, they were collected from different sources. as we discussed in class, biases and inaccuracies can skew or alter the accuracy of data, and coming from two different sources means that they might be affected by different biases. Additionally, given how niche the professional sports industry is, it is possible that the trend in the wage gap in this area of work differs from that of other industries. This poses an additional challenge for applying our analysis to current trends in the wage gap.
 
-More broadly, one challenge with using this data is that it only addresses one niche of the gender pay gap, which may be difficult to generalize to an entire population. These datasets only include the salaries and pay data of professional basketball players from a very short time period (2016-2017). In order to address this, we can  acknowledge this specificity in our discussion of our data analysis, or we could implement other sources (such as news articles) that point  out this pay disparity in more general terms.
+More broadly, one challenge with using this data is that it only addresses one niche of the gender pay gap, which may be difficult to generalize to an entire population. These datasets only include the salaries and pay data of professional basketball players from a very short time period (2022-2024). In order to address this, we can  acknowledge this specificity in our discussion of our data analysis, or we could implement other sources (such as news articles) that point  out this pay disparity in more general terms.
 
 
 ### Summary Information
