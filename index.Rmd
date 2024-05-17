@@ -125,7 +125,7 @@ Here's an example of how to run an R script inside an RMarkdown file:
 ### Chart 2
 # Author: Sirinya Hirunviriya
 
-
+```
 #All the required packages
 library(dplyr)
 library(ggplot2)
