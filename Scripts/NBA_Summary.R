@@ -6,32 +6,26 @@ library(dplyr)
 library(tidyverse)
 library(ggplot2)
 library(readr)
+library(readxl)
 
 # Load Data
-nba_data <- read_csv("C:/Users/aever/Documents/INFO201/exploratory-analysis-charliebond1/NBA Player Salaries (2022-23 Season)_exported.csv")
-wnba_data <- read_csv("C:/Users/aever/Documents/INFO201/exploratory-analysis-charliebond1/CSVs/wnba-stats_out.csv")
+nba_data <- read_csv("C:/Users/aever/Documents/INFO201/exploratory-analysis-charliebond1/CSVs/simple_nba.csv")
+wnba_data <- read_csv("C:/Users/aever/Documents/INFO201/exploratory-analysis-charliebond1/CSVs/simple_wnba.csv")
 View(nba_data)
 View(wnba_data)
 
-# Combine datasets into one
-nba_data <- nba_data  %>%
-  mutate(`slry/blks` = as.character(`slry/blks`))
-wnba_data <- wnba_data %>%
-  mutate(`slry/blks` = as.character(`slry/blks`))
-combined_basketball_data <- bind_rows(nba_data, wnba_data)
-View(combined_basketball_data)
 
 # Summary Values
 
 # Maximum NBA salary
-max_salary_NBA <- max(nba_data$salary)
+max_salary_NBA <- max(nba_data$Salary)
 print(max_salary_NBA)
-# $34,682,550
+# $48,070,014
 
 # Maximum WNBA salary
-max_salary_WNBA <- max(wnba_data$salary)
+max_salary_WNBA <- max(wnba_data$X2024.SALARY, rm.na = TRUE)
 print(max_salary_WNBA)
-# $105,000
+# $241,984
 
 # Minimum NBA salary
 min_salary_NBA <- min(nba_data$salary)
