@@ -8,10 +8,10 @@ library(ggplot2)
 library(readxl)
 
 # View excel files
-wnba_2024 <- read.csv("C:/Users/aever/Documents/INFO201/exploratory-analysis-charliebond1/CSVs/simple_wnba.csv")
-wnba_2016 <- read.csv("C:/Users/aever/Documents/INFO201/exploratory-analysis-charliebond1/CSVs/wnba-stats_out.csv")
-nba_2024 <- read.csv("C:/Users/aever/Documents/INFO201/exploratory-analysis-charliebond1/CSVs/simple_nba.csv")
-nba_2016 <- read.csv("C:/Users/aever/Documents/INFO201/exploratory-analysis-charliebond1/CSVs/nba-stats_out.csv")
+wnba_2024 <- read.csv("CSVs/simple_wnba.csv")
+wnba_2016 <- read.csv("CSVs/wnba-stats_out.csv")
+nba_2024 <- read.csv("CSVs/simple_nba.csv")
+nba_2016 <- read.csv("CSVs/nba-stats_out.csv")
 
 # Find the average salary in each dataframe
 wnba_2024_salary_avg <- mean(wnba_2024$X2024.SALARY, na.rm = TRUE)

@@ -63,7 +63,7 @@ print(diff_salary_min)
 # 58,305
 
 # Average dollars earned per minute of play (NBA)
-nba_data_no_zero_minutes <- nba_data[nba_data$Total.minutes != 0, ]
+nba_data_no_zero_minutes <- nba_data[nba_data$Total.Minutes > 0, ]
 View(nba_data_no_zero_minutes)
 avg_salary_per_min_NBA <- mean((nba_data$Salary)/(nba_data$Total.Minutes))
 print(avg_salary_per_min_NBA)

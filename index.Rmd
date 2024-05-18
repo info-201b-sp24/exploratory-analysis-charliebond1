@@ -34,7 +34,7 @@ Through this analysis, our intention is to examine how a broad issue of gender i
 
 ### Related Work  
 
-# In almost every workplace in the United States, the wage gap impacts how much women are paid compared to their male counterparts. Although this number has slowly been increasing since the mid-20th century, women still only earn 84 cents for every dollar that men earn (Haan, 2024). Although this degree of this disparity fluctuates between different career paths, it exists in all but a couple of workplaces. Previous studies conducted by Forbes advisors have shown that men earn up to 60 percent more than their female counterparts as real estate brokers, and 58 percent more as personal financial advisors (Haan, 2024). These numbers are even more jarring in the world of professional sports. In the NBA, male basketball players earn an average of 5 million dollars annually, which far overshadows female players’ measly annual salaries of $120,000 (Richard-Craven, 2024). According to Bloomberg Businessweek, viewership has increased exponentially in the last decade and a half, with over $75 million dollars in sponsorships accompanying this increase in exposure, but players’ salaries have largely stayed the same (Haque, 2023). This, along with the astonishing wage gap between the leagues, lends itself to a much larger issue of gender inequality in the workplace, and is something that needs to be addressed in order to ensure that female employees are getting justly compensated for their significant contributions to the workforce - from sports to real estate. 
+In almost every workplace in the United States, the wage gap impacts how much women are paid compared to their male counterparts. Although this number has slowly been increasing since the mid-20th century, women still only earn 84 cents for every dollar that men earn (Haan, 2024). Although this degree of this disparity fluctuates between different career paths, it exists in all but a couple of workplaces. Previous studies conducted by Forbes advisors have shown that men earn up to 60 percent more than their female counterparts as real estate brokers, and 58 percent more as personal financial advisors (Haan, 2024). These numbers are even more jarring in the world of professional sports. In the NBA, male basketball players earn an average of 5 million dollars annually, which far overshadows female players’ measly annual salaries of 120,000 dollars (Richard-Craven, 2024). According to Bloomberg Businessweek, viewership has increased exponentially in the last decade and a half, with over $75 million dollars in sponsorships accompanying this increase in exposure, but players’ salaries have largely stayed the same (Haque, 2023). This, along with the astonishing wage gap between the leagues, lends itself to a much larger issue of gender inequality in the workplace, and is something that needs to be addressed in order to ensure that female employees are getting justly compensated for their significant contributions to the workforce - from sports to real estate. 
 
 Haan, K. (n.d.). Gender pay gap statistics in 2024 – forbes advisor. Retrieved May 1, 2024, from 
 https://www.forbes.com/advisor/business/gender-pay-gap-statistics/
@@ -52,13 +52,13 @@ y-gap-with-wnba-alum-angel-mccoughtry/
 
 ### The Dataset
 
-Where was the data found?
+$Where was the data found?$
 
-The data was found by googling “WNBA salary dataset" and "NBA salary dataset". The data we found for the Women's league is from herhoopstats.com, and the NBA data was found on gigasheet.com.
+The data was found by googling “WNBA salary dataset" and "NBA salary dataset". The data we found for the Women's league is from herhoopstats.com, and the NBA data was found on gigasheet.com. we also found data from 2016 by googling "wnba nba salary gap csv". 
 
 Who Collected the data?
 
-The WNBA data was collected by technologists at Sportradar, a sports technology company affiliated with HerHoopStats. The NBA data was uploaded by a community contributor who put the data in CSV format, but the information is available to the public by the NBA.
+The WNBA data was collected by technologists at Sportradar, a sports technology company affiliated with HerHoopStats. The NBA data was uploaded by a community contributor who put the data in CSV format, but the information is available to the public by the NBA. The 2016 data was found on github.
 
 How was the data collected? 
 
@@ -100,10 +100,11 @@ More broadly, one challenge with using this data is that it only addresses one n
 
 
 ### Summary Information
+``` {r summary info, echo=FALSE, message=FALSE}
+source("Scripts/NBA_Summary.R")
+```
 
-Write a summary paragraph of findings that includes the 5 values calculated from your summary information R script
-
-# After performing a preliminary analysis of the data and calculating a few values, the difference between female and male players' earnings is astonishing. Beginning with the average salary within each league, we found that the average salary in the NBA was over $8,416,599, while in the WNBA, the average salary was a mere $130,795.70, which is a difference of $8,205,803. Taking a closer look, we first compared the highest and lowest salaries between the leagues. We found that the maximum NBA salary ($48,070,014) was $47,878,030 greater than the highest WNBA salary. Interestingly, the lowest NBA salary ($5,849) was $58,305 less than the lowest WNBA salary of $64,154. We also compared salaries relative to performance metrics such as salary per point and salary per minute played. Although on average, WNBA players did tend to score less in games, the money they earned per point and minute played was still significantly less than their male counterparts. On average, NBA players made $850,078.40 per point, whereas WNBA players only earned $18,532.70 for every point they scored (a difference of $831,546.30). Additionally, NBA players earned $11,637.74 for every minute of play, while female players in the WNBA only made $6,447.84 (a difference of $5,189.90).
+After performing a preliminary analysis of the data and calculating a few values, the difference between female and male players' earnings is astonishing. Beginning with the average salary within each league, we found that the average salary in the NBA was over \$`r average_salary_NBA`, while in the WNBA, the average salary was a mere \$`r average_salary_WNBA`, which is a difference of \$`r diff_salary_avg`. Taking a closer look, we first compared the highest and lowest salaries between the leagues. We found that the maximum NBA salary (48,070,014) was \$`r diff_salary_max` greater than the highest WNBA salary. Interestingly, the lowest NBA salary (5,849) was \$ `r diff_salary_min` less than the lowest WNBA salary of 64,154. We also compared salaries relative to performance metrics such as salary per point and salary per minute played. Although on average, WNBA players did tend to score less in games, the money they earned per point and minute played was still significantly less than their male counterparts. On average, NBA players made 850,078.40 per point, whereas WNBA players only earned 18,532.70 for every point they scored (a difference of 831,546.30). Additionally, NBA players earned 11,637.74 dollars for every minute of play, while female players in the WNBA only made 6,447.84 dollars (a difference of $5,189.90).
 
 ### Table
 
@@ -189,4 +190,4 @@ plot(wnba_nba_year_trend_graph)
 ```
 
 
-This chart displays the change in average salary in each league between 2016 and 2024. In 2016, the average salary for both is 100% (or 1x) the amount that it was in 2016, which is why both graphs start at one. The fold change (amount of increase) was calculated using the formula (2024 avg salary)/(2016 avg salary). Using this, we determined that the WNBA's average salary increased to around 1.25 times (125%) the salary from 2016, while the NBA's average salary to 0.94 (or 94%) of its 2016 salary. This data is promising, as it shows that the WNBA's salaries are, in general, on the rise.
+This chart displays the change in average salary in each league between 2016 and 2024. The purpose for showing this is to examine and compare the trend in calaries among the mens and womens leagues, which can help us begin to determine whether progress is being made to close the wage gap. In 2016, the average salary for both is 100% (or 1x) the amount that it was in 2016, which is why both graphs start at one. The fold change (amount of increase) was calculated using the formula (2024 avg salary)/(2016 avg salary). Using this, we determined that the WNBA's average salary increased to around 1.25 times (125%) the salary from 2016, while the NBA's average salary to 0.94 (or 94%) of its 2016 salary. This data is promising, as it shows that the WNBA's salaries are, in general, on the rise.
