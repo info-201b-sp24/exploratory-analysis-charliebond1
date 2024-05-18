@@ -1,58 +1,249 @@
 ---
 title: "Exploratory Analysis"
 output: html_document
+editor_options: 
+  markdown: 
+    wrap: 72
 ---
 
 ## Project title
 
-Give your project a concise, interesting title that summarizes the entirety of your project
+# Gender-based Wage Gap in Professional Sports
 
 ### Authors
 
-Names of your team members
+# Charlie Bond, Sirinya Hiruvinya, Aleah Rosner
 
 ### Date
 
-Winter 2022
+Spring 2024
 
 ### Abstract
 
-No more than three sentences that summarize your project. Focus on the very most important aspects. For example: (1) "Our main question is .... This question is important because .... To address the question, we will ...." (2) "We are concerned with ..., because .... To address this concern, we plan to ...." (3) "Consider that .... This is important because .... Accordingly, we plan to ...."
+Our main goal with this project is to explore the difference in salary
+between NBA players and WNBA players, which is important because it
+points to a larger issue of gender inequality that spans nearly every
+career path. To address this question, we will be comparing the salaries
+of professional players across both leagues and using our dataset to
+analyze trends in salary vs games played, points scored, and other
+factors. When doing this, it is important to consider that this data
+spans a short time frame (2016-2017), which needs to be taken into
+account when making conclusions from our analysis; however, our goal of
+bringing light to the issue of the wage gap by applying it to the
+popular world of professional sports still stands.
 
 ### Keywords
 
-3-5 keywords that summarize your project.
-(e.g., "Keywords: human physiology; bicycle exercise; Gen Z; times-series data")
+NBA, WNBA, wage gap, gender inequality, salary
 
-### Introduction  
+### Introduction
 
-Briefly introduce your project.  Include 3-5 research questions. What motivates the questions? Why are they important? (at least 200 words)
+A few research questions we hope to explore using this data set include:
+How does statistical basketball performance, such as minutes played,
+points scored, rebounds, assists, steals, and blocks, differ between the
+WNBA and NBA? How do salary-to-performance ratios (salary per point,
+salary per rebound, salary per assist, etc.) compare between male and
+female basketball players? To what extent does salary vary between WNBA
+and NBA players when compared to their performance? Through this
+analysis, our intention is to examine how a broad issue of gender
+inequality in the workplace is applied to a niche such as elite sports.
+This is important because many people don’t acknowledge the fact that
+although playing at the most elite level of basketball is a rare feat
+for both men and women, the difference in pay between the men’s and
+women’s professional leagues is palpable. More broadly, we aim to bring
+awareness to the wage gap as a whole by introducing it in relation to a
+very popular sport. Acknowledging the wage gap is incredibly important
+because only after people are aware of it can changes begin to be made.
+By relating the wage gap to sports, it is possible that this issue can
+reach a wider audience and more people might be inspired to advocate for
+salary transparency in their workspace and careers.
 
-### Related Work  
+### Related Work
 
-Describe your topic and related work in this space. You must include 3 citations to related work (URLs to similar work, high quality articles from the popular press, research papers, etc. ) Please use a standard citation style of your choice. (at least 200 words)
+In almost every workplace in the United States, the wage gap impacts how
+much women are paid compared to their male counterparts. Although this
+number has slowly been increasing since the mid-20th century, women
+still only earn 84 cents for every dollar that men earn (Haan, 2024).
+Although this degree of this disparity fluctuates between different
+career paths, it exists in all but a couple of workplaces. Previous
+studies conducted by Forbes advisors have shown that men earn up to 60
+percent more than their female counterparts as real estate brokers, and
+58 percent more as personal financial advisors (Haan, 2024). These
+numbers are even more jarring in the world of professional sports. In
+the NBA, male basketball players earn an average of 5 million dollars
+annually, which far overshadows female players’ measly annual salaries
+of 120,000 dollars (Richard-Craven, 2024). According to Bloomberg
+Businessweek, viewership has increased exponentially in the last decade
+and a half, with over \$75 million dollars in sponsorships accompanying
+this increase in exposure, but players’ salaries have largely stayed the
+same (Haque, 2023). This, along with the astonishing wage gap between
+the leagues, lends itself to a much larger issue of gender inequality in
+the workplace, and is something that needs to be addressed in order to
+ensure that female employees are getting justly compensated for their
+significant contributions to the workforce - from sports to real estate.
+
+Haan, K. (n.d.). Gender pay gap statistics in 2024 – forbes advisor.
+Retrieved May 1, 2024, from
+<https://www.forbes.com/advisor/business/gender-pay-gap-statistics/>
+
+Haque, J. (2023, April 26). Women’s basketball is raking in more cash
+than ever, but the players aren’t. Bloomberg.Com.
+<https://www.bloomberg.com/news/features/2023-04-26/wnba-is-growing-but-players-are>
+n-t-getting-a-penny-of-revenue-share
+
+Richard-Craven, M. (n.d.). Addressing the gender pay gap with wnba alum
+angel mccoughtry. Forbes. Retrieved May 1, 2024, from
+<https://www.forbes.com/sites/mayarichard-craven/2024/03/14/addressing-the-gender-pa>
+y-gap-with-wnba-alum-angel-mccoughtry/
 
 ### The Dataset
 
-Where did you find the data? Please include a link to the data source  
-Who collected the data?  
-How was the data collected or generated?  
-Why was the data collected?  
-How many observations (rows) are in your data?  
-How many features (columns) are in the data?  
-What, if any, ethical questions or questions of power do you need to consider when working with this data?  
-What are possible limitations or problems with this data?   (at least 200 words)
+$Where was the data found?$
+
+The data was found by googling “WNBA salary dataset" and "NBA salary
+dataset". The data we found for the Women's league is from
+herhoopstats.com, and the NBA data was found on gigasheet.com. we also
+found data from 2016 by googling "wnba nba salary gap csv".
+
+Who Collected the data?
+
+The WNBA data was collected by technologists at Sportradar, a sports
+technology company affiliated with HerHoopStats. The NBA data was
+uploaded by a community contributor who put the data in CSV format, but
+the information is available to the public by the NBA. The 2016 data was
+found on github.
+
+How was the data collected?
+
+The data is made open to public, and was collected and formatted into a
+csv file by technologists from companies such as sportradar.
+
+Why was the data collected?
+
+Typically, this data is collected for use by the media (such as sports
+announcers) and for sports betting purposes.
+
+How many observations (rows) are in your data?
+
+The WNBA has information on 130 players, and the NBA dataset has
+information on over 500 players. Combined, there are 630 observations.
+
+How many features (columns) are in the data?
+
+The original datasets had 27(WNBA) and 52(NBA) features, but we will
+condensed these to the 10 features we felt were most relevant to our
+analysis.
+
+What, if any, ethical questions or questions of power do you need to
+consider when working with this data?
+
+Because the salary data for WNBA and NBA players is available for the
+public to access, there aren’t as many ethical questions to be addressed
+in terms of anonymity. However, in order to avoid potential bias in our
+analysis and in other people’s exploration of the data, it might be a
+good idea to refrain from using specific players’ names in our analysis.
+This is especially important as many people already have preconceived
+notions about the salaries of the NBA compared to the WNBA, so it is
+important to ensure that our analysis and presentation of the data
+reflects only the numbers, and is not influenced by previous assumptions
+about the relative popularity of the two leagues.
+
+What are possible limitations or problems with this data?
+
+With our ultimate goal being to demonstrate the clear difference in
+salaries between men and women, one major drawback of our data is that
+it only showcases this disparity in one part of one very niche industry.
+Additionally, comparing the data we have on the wage gap in other
+industries (such as from the Forbes analysts mentioned above) to the
+data we’ve found in professional basketball leagues, the sports figures
+we will be analyzing demonstrate an extreme wage gap that is
+significantly larger than almost any other industry. For this reason,
+it’s important that we acknowledge that the differences we see between
+the WNBA and the NBA are more stark than in other areas of work.
+Additionally, the data we have on the WNBA has about half the entries
+(rows) compared to the NBA. Although we have adequate numbers of data
+points for both leagues, this difference could also lead to a slightly
+more accurate portrayal of one league compared to the other simply
+because more data is available. Keeping in mind both the extremity of
+the wage gap in this industry specifically and the difference in data
+points is important so that we don’t accidentally end up spreading
+misinformation, which could lead to a reversal of the progress that has
+been slowly but steadily made to close this gap.
 
 ### Implications
 
-Assuming you answer your research questions, briefly describe the expected or possible implications for technologists, designers, and policymakers. (at least 150 words)
+By understanding the disparity evident through these statistics, data
+analysts and technologists could develop AI or data analysis tools that
+could assess player value and their contribution to the games. This
+would make it easier to objectively measure a player’s real talent and
+provide female players with more fair pay. This helps reduce biases and
+provides evident numerical data that could be used to determine a
+player's salary.
+
+Designers could take part in creating more compelling campaigns and
+narratives to highlight the strengths, achievements, and stories of
+female players in the WNBA. Designers play a critical role in shaping
+how sports are marketed to the general public, and through strategic and
+inclusive branding, they could challenge stereotypes and empower women
+in the sports industry. This will garner more attention for women in
+sports and WNBA games, which could drive more revenue and empowerment
+for the industry.
+
+Our analysis could also highlight the severity of gender inequality to
+policymakers; policymakers could implement policies such as the pay
+transparency initiative for employers, invest more in women's sports and
+representation, and monitor the pay gap in different industries. If
+technologists, designers, and policymakers work together, they could
+reduce the gender wage gap by coming up with systems and policies that
+objectively measure an individual's talents and contributions that
+determine their wage.
 
 ### Limitations & Challenges
-What challenges or limitations might you need to address with your project idea more broadly? Briefly discuss. (at least 150 words)
+
+While the datasets are ideal in size and readability, they were
+collected from different sources. as we discussed in class, biases and
+inaccuracies can skew or alter the accuracy of data, and coming from two
+different sources means that they might be affected by different biases.
+Additionally, given how niche the professional sports industry is, it is
+possible that the trend in the wage gap in this area of work differs
+from that of other industries. This poses an additional challenge for
+applying our analysis to current trends in the wage gap.
+
+More broadly, one challenge with using this data is that it only
+addresses one niche of the gender pay gap, which may be difficult to
+generalize to an entire population. These datasets only include the
+salaries and pay data of professional basketball players from a very
+short time period (2022-2024). In order to address this, we can
+acknowledge this specificity in our discussion of our data analysis, or
+we could implement other sources (such as news articles) that point out
+this pay disparity in more general terms.
 
 ### Summary Information
 
-Write a summary paragraph of findings that includes the 5 values calculated from your summary information R script
+```{r summary info, echo=FALSE, message=FALSE}
+source("Scripts/NBA_Summary.R")
+```
+
+After performing a preliminary analysis of the data and calculating a
+few values, the difference between female and male players' earnings is
+astonishing. Beginning with the average salary within each league, we
+found that the average salary in the NBA was over
+\$`r average_salary_NBA`, while in the WNBA, the average salary was a
+mere \$`r average_salary_WNBA`, which is a difference of
+\$`r diff_salary_avg`. Taking a closer look, we first compared the
+highest and lowest salaries between the leagues. We found that the
+maximum NBA salary (48,070,014) was \$`r diff_salary_max` greater than
+the highest WNBA salary. Interestingly, the lowest NBA salary (5,849)
+was \$ `r diff_salary_min` less than the lowest WNBA salary of 64,154.
+We also compared salaries relative to performance metrics such as salary
+per point and salary per minute played. Although on average, WNBA
+players did tend to score less in games, the money they earned per point
+and minute played was still significantly less than their male
+counterparts. On average, NBA players made 850,078.40 per point, whereas
+WNBA players only earned 18,532.70 for every point they scored (a
+difference of 831,546.30). Additionally, NBA players earned 11,637.74
+dollars for every minute of play, while female players in the WNBA only
+made 6,447.84 dollars (a difference of \$5,189.90).
 
 ### Table
 
@@ -66,6 +257,7 @@ The stats include Average Playtime per game, and Average Salary per Minute, whic
 
 Include a chart
 
+<<<<<<< HEAD
 ##Author: Charlie Bond
 ```
 source("Chart1_performance_stats.R")
@@ -73,15 +265,62 @@ source("Chart1_performance_stats.R")
 This chart takes lookes at average salaries for each league and divides them by various perfomance statistics. 
 The goal of this is to compare the salaries between the leagues accounting for performance and what is rewarded in each league. 
 The ultimate purpose is to show the sheer scale of difference in how players get rewarded in each league, accounting for differences between the leagues. 
+=======
+Describe why you chose this chart and what information it reveals
+
+Here's an example of how to run an R script inside an RMarkdown file:
+
+\`\`\``{r, echo = FALSE, code = readLines("chart1_example.R")}`
+>>>>>>> 8be055ede32408c4ccfe4d7c0c67657f33abc647
 
 ### Chart 2
 
-Include a chart
+# Author: Sirinya Hirunviriya
 
-Describe why you chose this chart and what information it reveals
+```         
+source("CHART2_PALMY.R") 
+print(p)
+```
+
+Purpose: The box plot offers a side-by-side comparison of WNBA and NBA
+players, providing insights into the statistical distribution of WNBA
+and NBA salaries. By examining statistical data like the interquartile
+range (IQR), median, minimum, and maximum salaries, provided in the box
+plot, we can gain a better evaluate the extent extent of the gender pay
+gap within professional basketball leagues.
+
+Insights: The box plot underscores that gender pay gap still remains as
+a persistent issue in professional basketball. Notably, the maximum
+salary of WNBA remains significantly lower than that of the minimum
+salary of NBA player, showing a substantial disparity in earning
+potential between female and male athlete. This disparity underscores
+the significant difference in earning potential between female and male
+athletes. Furthermore, the wider Interquartile Range (IQR) among NBA
+players also sugguest a broader spectrum of earnings within the league.
+This IQR range indicates how much more important market demand, skill,
+and reputation are in the NBA than they are in the WNBA, where players
+all make comparable salaries despite their skill and reputation.
+Additionally, the presence of outliers, such as the NBA player with a
+maximum earning of 50 million, further emphasizes the varied earning
+profiles within the NBA, while WNBA players tend to earn within a
+narrower range. All these statistical data underscores ongoing need for
+efforts to reduce the inequality in gender pay gap in sports.
 
 ### Chart 3
 
-Include a chart
+```         
+source("Chart3_yeartrends.R") plot(wnba_nba_year_trend_graph)
+```
 
-Describe why you chose this chart and what information it reveals
+This chart displays the change in average salary in each league between
+2016 and 2024. The purpose for showing this is to examine and compare
+the trend in calaries among the mens and womens leagues, which can help
+us begin to determine whether progress is being made to close the wage
+gap. In 2016, the average salary for both is 100% (or 1x) the amount
+that it was in 2016, which is why both graphs start at one. The fold
+change (amount of increase) was calculated using the formula (2024 avg
+salary)/(2016 avg salary). Using this, we determined that the WNBA's
+average salary increased to around 1.25 times (125%) the salary from
+2016, while the NBA's average salary to 0.94 (or 94%) of its 2016
+salary. This data is promising, as it shows that the WNBA's salaries
+are, in general, on the rise.
