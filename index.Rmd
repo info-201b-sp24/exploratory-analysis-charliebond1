@@ -258,7 +258,7 @@ The stats include Average Playtime per game, and Average Salary per Minute, whic
 Include a chart
 
 <<<<<<< HEAD
-##Author: Charlie Bond
+#Author: Charlie Bond
 ```
 source("Chart1_performance_stats.R")
 
@@ -266,12 +266,7 @@ This chart takes lookes at average salaries for each league and divides them by 
 The goal of this is to compare the salaries between the leagues accounting for performance and what is rewarded in each league. 
 The ultimate purpose is to show the sheer scale of difference in how players get rewarded in each league, accounting for differences between the leagues. 
 =======
-Describe why you chose this chart and what information it reveals
 
-Here's an example of how to run an R script inside an RMarkdown file:
-
-\`\`\``{r, echo = FALSE, code = readLines("chart1_example.R")}`
->>>>>>> 8be055ede32408c4ccfe4d7c0c67657f33abc647
 
 ### Chart 2
 
