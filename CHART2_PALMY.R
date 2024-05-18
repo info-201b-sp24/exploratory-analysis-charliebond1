@@ -7,8 +7,8 @@ library(scales)
 library(plotly)
 
 #Downloading csv data into R
-wnba_data <- read.csv("Desktop/info201/exploratory-analysis-charliebond1/CSVs/simple_wnba.csv")
-nba_data <- read.csv("Desktop/info201/exploratory-analysis-charliebond1/CSVs/simple_nba.csv")
+wnba_data <- read.csv("CSVs/simple_wnba.csv")
+nba_data <- read.csv("CSVs/simple_nba.csv")
  
 #Summerize data
 nba_summary <- summary(nba_data$Salary)
