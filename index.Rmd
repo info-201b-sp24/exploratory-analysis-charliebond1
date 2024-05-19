@@ -248,10 +248,9 @@ made 6,447.84 dollars (a difference of \$5,189.90).
 
 ### Table
 
-```
+```{r}
 source("Aggregate Table.R")
 plot(Pay_gap_summary_table)
-
 ```
 
 This was included to give some general impressions on differences between each league. 
@@ -263,7 +262,7 @@ When we want to consider the size of paygap between WNBA players and NBA players
 
 #Author: Charlie Bond
 
-```
+```{r}
 source("Chart1_performance_stats.R")
 plot(performance_statistics_plot)
 ```
@@ -279,7 +278,7 @@ We can see that for every metric, NBA players are compensated in far greater amo
 
 # Author: Sirinya Hirunviriya
 
-```         
+```{r}         
 source("CHART2_PALMY.R") 
 plot(interactive_plot)
 ```
@@ -310,7 +309,7 @@ efforts to reduce the inequality in gender pay gap in sports.
 
 ### Chart 3
 
-```         
+``` {r}        
 source("Chart3_yeartrends.R") plot(wnba_nba_year_trend_graph)
 ```
 
