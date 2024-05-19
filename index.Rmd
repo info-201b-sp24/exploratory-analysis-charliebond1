@@ -60,6 +60,7 @@ salary transparency in their workspace and careers.
 
 ### Related Work
 
+
 In almost every workplace in the United States, the wage gap impacts how
 much women are paid compared to their male counterparts. Although this
 number has slowly been increasing since the mid-20th century, women
@@ -247,24 +248,30 @@ made 6,447.84 dollars (a difference of \$5,189.90).
 
 ### Table
 
-source("\Aggregate Table.R")
-#This was included to give some general impressions on differences between each league. 
-The stats include Average Playtime per game, and Average Salary per Minute, which gives an idea of how the players are compensated when accounting for differences in the structure of each league. 
+```
+source("Aggregate Table.R")
+plot(Pay_gap_summary_table)
 
+```
+
+This was included to give some general impressions on differences between each league. 
+The stats include Average Playtime per game, and Average Salary per Minute, which gives an idea of how the players are compensated when accounting for differences in the structure of each league. 
+When we want to consider the size of paygap between WNBA players and NBA players, we want to account for these kinds of factors, like how much playtime the average player gets and how many games the average player plays versus how many the average player starts, which inform our understanding of these pay differences across time and other variables. 
 
 
 ### Chart 1
 
-Include a chart
-
-<<<<<<< HEAD
 #Author: Charlie Bond
+
 ```
 source("Chart1_performance_stats.R")
+plot(performance_statistics_plot)
+```
 
 This chart takes lookes at average salaries for each league and divides them by various perfomance statistics. 
 The goal of this is to compare the salaries between the leagues accounting for performance and what is rewarded in each league. 
 The ultimate purpose is to show the sheer scale of difference in how players get rewarded in each league, accounting for differences between the leagues. 
+We can see that for every metric, NBA players are compensated in far greater amounts for each performance statistic than WNBA players, but it does vary in terms of the gap. When we want to consider these differences, It helps to get an idea of how much players are getting compensated on average, whether they are contributing greatly to their team or not. 
 =======
 
 
@@ -274,7 +281,7 @@ The ultimate purpose is to show the sheer scale of difference in how players get
 
 ```         
 source("CHART2_PALMY.R") 
-print(p)
+plot(interactive_plot)
 ```
 
 Purpose: The box plot offers a side-by-side comparison of WNBA and NBA

@@ -39,8 +39,9 @@ mod_simple_nba <- simple_nba %>%
   mutate(league = "NBA")
 
 combined_data <- rbind(mod_simple_nba, mod_simple_wnba)
+
 combined_data <- combined_data %>% 
-  mutate(vars(Salary:BLK), as.numeric)
+  mutate(across(Salary:BLK, ~ as.numeric(replace_na(., 0))))
 
 
 Pay_gap_summary_table <- combined_data %>% 

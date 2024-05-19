@@ -44,13 +44,13 @@ write.csv(simple_wnba, "C:/Users/RCB3/Downloads/simple_wnba.csv", row.names = FA
 #Combining Datasets
 
 mod_simple_wnba <- simple_wnba %>% 
-  select('Player Name', Salary, GP:BLK) %>% 
+  select("Player Name", Salary, GP:BLK) %>% 
   mutate(league = "WNBA")
 mod_simple_nba <- simple_nba %>% 
   select(Player.Name, Salary, GP:PTS, Total.Minutes) %>% 
   relocate(Total.Minutes, .after = GS) %>% 
   relocate(PTS, .after = Total.Minutes) %>% 
-  rename('Total Minutes' = Total.Minutes, 'Player Name' = Player.Name) %>% 
+  rename('Total Minutes' = Total.Minutes, "Player Name" = Player.Name) %>% 
   mutate(league = "NBA")
 
 combined_data <- rbind(mod_simple_nba, mod_simple_wnba)
@@ -63,6 +63,10 @@ view(mod_simple_wnba)
 
 #Preparing Inputs
 
+combined_data <- combined_data %>% 
+  mutate(across(Salary:BLK, ~ as.numeric(replace_na(., 0))))
+  
+  
 average_performance_stats <- combined_data %>%
   group_by(league) %>% 
   filter(
@@ -72,10 +76,10 @@ average_performance_stats <- combined_data %>%
     BLK > 0
   ) %>% 
   summarise(
-    avg_salary_per_point = mean(Salary/PTS, na.rm = T),
-    avg_salary_per_assist = mean(Salary/AST, na.rm = T),
-    avg_salary_per_steal = mean(Salary/STL, na.rm = T),
-    avg_salary_per_block = mean(Salary/BLK, na.rm = T)
+    avg_salary_per_point = mean(as.numeric(Salary))/mean(PTS, na.rm = T),
+    avg_salary_per_assist = mean(as.numeric(Salary))/mean(AST, na.rm = T),
+    avg_salary_per_steal = mean(as.numeric(Salary))/mean(STL, na.rm = T),
+    avg_salary_per_block = mean(as.numeric(Salary))/mean(BLK, na.rm = T)
   )
 print(average_performance_stats)
 
@@ -95,7 +99,7 @@ view(combined_data)
 #The Bar Plot
 
 
-ggplot(fitted_inputs, aes(x = PerformanceStats, y = avg_salary, fill = league)) +
+performance_statistics_plot <- ggplot(fitted_inputs, aes(x = PerformanceStats, y = avg_salary, fill = league)) +
   geom_bar(stat = "identity", position = "dodge") +
   labs(
     title = "Comparing Average Salary by Performance Statistic between the NBA and the WNBA",
@@ -104,7 +108,7 @@ ggplot(fitted_inputs, aes(x = PerformanceStats, y = avg_salary, fill = league)) 
     fill = "League"
   ) 
 
-
+plot(performance_statistics_plot)
 
 
 
