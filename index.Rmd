@@ -259,8 +259,8 @@ Include a chart
 
 <<<<<<< HEAD
 ##Author: Charlie Bond
-```
-source("Chart1_performance_stats.R")
+```{r chart1, echo = FALSE}
+#source("Chart1_performance_stats.R")
 ```
 
 This chart takes lookes at average salaries for each league and divides them by various perfomance statistics. 
@@ -278,9 +278,9 @@ Here's an example of how to run an R script inside an RMarkdown file:
 
 # Author: Sirinya Hirunviriya
 
-```         
-source("CHART2_PALMY.R") 
-print(p)
+``` {r chart2, echo = FALSE}        
+#source("CHART2_PALMY.R") 
+#print(p)
 ```
 
 Purpose: The box plot offers a side-by-side comparison of WNBA and NBA
@@ -309,8 +309,8 @@ efforts to reduce the inequality in gender pay gap in sports.
 
 ### Chart 3
 
-```         
-source("Chart3_yeartrends.R") 
+```  {r chart3, echo = FALSE}
+source("Chart3_yeartrends.R")
 plot(wnba_nba_year_trend_graph)
 ```
 
