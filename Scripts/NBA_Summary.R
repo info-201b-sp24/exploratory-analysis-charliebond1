@@ -9,8 +9,8 @@ library(readr)
 library(readxl)
 
 # Load Data
-nba_data <- read_csv("C:/Users/aever/Documents/INFO201/exploratory-analysis-charliebond1/CSVs/simple_nba.csv")
-wnba_data <- read_csv("C:/Users/aever/Documents/INFO201/exploratory-analysis-charliebond1/CSVs/simple_wnba.csv")
+nba_data <- read_csv("CSVs/simple_nba.csv")
+wnba_data <- read_csv("CSVs/simple_wnba.csv")
 View(nba_data)
 View(wnba_data)
 

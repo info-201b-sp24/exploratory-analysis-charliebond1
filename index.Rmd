@@ -105,7 +105,7 @@ dataset". The data we found for the Women's league is from
 herhoopstats.com, and the NBA data was found on gigasheet.com. we also
 found data from 2016 by googling "wnba nba salary gap csv".
 
-Who Collected the data?
+$Who Collected the data?$
 
 The WNBA data was collected by technologists at Sportradar, a sports
 technology company affiliated with HerHoopStats. The NBA data was
@@ -113,22 +113,22 @@ uploaded by a community contributor who put the data in CSV format, but
 the information is available to the public by the NBA. The 2016 data was
 found on github.
 
-How was the data collected?
+$How was the data collected?$
 
 The data is made open to public, and was collected and formatted into a
 csv file by technologists from companies such as sportradar.
 
-Why was the data collected?
+$Why was the data collected?$
 
 Typically, this data is collected for use by the media (such as sports
 announcers) and for sports betting purposes.
 
-How many observations (rows) are in your data?
+$How many observations (rows) are in your data?$
 
 The WNBA has information on 130 players, and the NBA dataset has
 information on over 500 players. Combined, there are 630 observations.
 
-How many features (columns) are in the data?
+$How many features (columns) are in the data?$
 
 The original datasets had 27(WNBA) and 52(NBA) features, but we will
 condensed these to the 10 features we felt were most relevant to our
