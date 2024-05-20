@@ -246,9 +246,11 @@ dollars for every minute of play, while female players in the WNBA only
 made 6,447.84 dollars (a difference of \$5,189.90).
 
 ### Table
+```{r aggregatetable, echo = FALSE}
+#source("Aggregate_Table.R")
+```
 
-source("\Aggregate Table.R")
-#This was included to give some general impressions on differences between each league. 
+This was included to give some general impressions on differences between each league. 
 The stats include Average Playtime per game, and Average Salary per Minute, which gives an idea of how the players are compensated when accounting for differences in the structure of each league. 
 
 
@@ -259,8 +261,6 @@ Include a chart
 
 <<<<<<< HEAD
 ##Author: Charlie Bond
-```{r chart1, echo = FALSE}
-#source("Chart1_performance_stats.R")
 ```{r chart1, echo = FALSE}
 #source("Chart1_performance_stats.R")
 ```
@@ -280,9 +280,6 @@ Here's an example of how to run an R script inside an RMarkdown file:
 
 # Author: Sirinya Hirunviriya
 
-``` {r chart2, echo = FALSE}        
-#source("CHART2_PALMY.R") 
-#print(p)
 ``` {r chart2, echo = FALSE}        
 #source("CHART2_PALMY.R") 
 #print(p)
