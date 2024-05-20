@@ -281,8 +281,8 @@ Here's an example of how to run an R script inside an RMarkdown file:
 # Author: Sirinya Hirunviriya
 
 ``` {r chart2, echo = FALSE}        
-#source("CHART2_PALMY.R") 
-#print(p)
+source("CHART2_PALMY.R") 
+interactive_plot
 ```
 
 Purpose: The box plot offers a side-by-side comparison of WNBA and NBA
