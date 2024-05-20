@@ -278,7 +278,7 @@ Here's an example of how to run an R script inside an RMarkdown file:
 
 ### Chart 2
 
-# Author: Sirinya Hirunviriya
+#### Author: Sirinya Hirunviriya
 
 ``` {r chart2, echo = FALSE}        
 source("CHART2_PALMY.R") 
@@ -289,8 +289,8 @@ Purpose: The box plot offers a side-by-side comparison of WNBA and NBA
 players, providing insights into the statistical distribution of WNBA
 and NBA salaries. By examining statistical data like the interquartile
 range (IQR), median, minimum, and maximum salaries, provided in the box
-plot, we can gain a better evaluate the extent extent of the gender pay
-gap within professional basketball leagues.
+plot, we understand the extent gender pay
+gap contributes in professional basketball leagues.
 
 Insights: The box plot underscores that gender pay gap still remains as
 a persistent issue in professional basketball. Notably, the maximum
