@@ -246,44 +246,46 @@ dollars for every minute of play, while female players in the WNBA only
 made 6,447.84 dollars (a difference of \$5,189.90).
 
 ### Table
-```{r aggregatetable, echo = FALSE}
+```{r aggregatetable, echo = FALSE, message = FALSE, warning=FALSE}
 source("Aggregate Table.R")
+rmarkdown::paged_table(Pay_gap_summary_table)
 ```
 
 This was included to give some general impressions on differences between each league. 
-The stats include Average Playtime per game, and Average Salary per Minute, which gives an idea of how the players are compensated when accounting for differences in the structure of each league. 
+The stats include Average Playtime per game, and Average Salary per Minute, which gives an idea of how the players are compensated when accounting for differences in the structure of each league. The Proportion of Games Played out of Games Started gives an idea of how reliably a player is playing a full game out of all their court appearances, which makes for important context when considering the pay differences between each league. 
 
 
 
 ### Chart 1
 
 ##Author: Charlie Bond
-```{r chart1, echo = FALSE}
+```{r chart1, echo = FALSE, message = FALSE, warning=FALSE}
 source("Chart1_performance_stats.R")
 plot(performance_statistics_plot)
 ```
 
-This chart takes lookes at average salaries for each league and divides them by various perfomance statistics. 
+This chart takes looks at average salaries for each league and divides them by various performance statistics. 
 The goal of this is to compare the salaries between the leagues accounting for performance and what is rewarded in each league. 
 The ultimate purpose is to show the sheer scale of difference in how players get rewarded in each league, accounting for differences between the leagues. 
+Some noteworthy observations paint the stark difference between each league: the average salary per point for the WNBA cannot be observed on the scale of this bar plot, but is barely visible for each of the other performance metrics. As such, this graph serves a purpose of underscoring the sheer scale in difference between the two leagues. 
 =======
 
 
 ### Chart 2
 
-# Author: Sirinya Hirunviriya
+#### Author: Sirinya Hirunviriya
 
-``` {r chart2, echo = FALSE}        
+``` {r chart2, echo = FALSE, message = FALSE}        
 source("CHART2_PALMY.R") 
-print(p)
+interactive_plot
 ```
 
 Purpose: The box plot offers a side-by-side comparison of WNBA and NBA
 players, providing insights into the statistical distribution of WNBA
 and NBA salaries. By examining statistical data like the interquartile
 range (IQR), median, minimum, and maximum salaries, provided in the box
-plot, we can gain a better evaluate the extent extent of the gender pay
-gap within professional basketball leagues.
+plot, we understand the extent gender pay
+gap contributes in professional basketball leagues.
 
 Insights: The box plot underscores that gender pay gap still remains as
 a persistent issue in professional basketball. Notably, the maximum
