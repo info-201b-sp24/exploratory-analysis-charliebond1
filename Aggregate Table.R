@@ -3,34 +3,17 @@ library(dplyr)
 library(tinytex)
 library(ggplot2)
 
-
-load(combined_data)
-View(combined_data)
-
-
-nba <- read_csv("C:/Users/RCB3/Downloads/NBA Player Salaries (2022-23 Season)_exported.csv")
-wnba <- read_excel("C:/Users/RCB3/Downloads/WNBA STATS (1).xlsx")
-
-#Trimming Datasets
-
-
-
-simple_nba <- nba %>% 
-  select(`Player Name`:GS, AST, STL, BLK, PTS, FG, FGA, `Total Minutes`)
-simple_wnba <- wnba %>% 
-  select(PLAYER:PTS, AST, STL, BLK, FGM, FGA)
-simple_nba <- data.frame(simple_nba)
-write.csv(simple_nba, "C:/Users/RCB3/Downloads/simple_nba.csv", row.names = FALSE)
-simple_wnba <- data.frame(simple_wnba)
-write.csv(simple_wnba, "C:/Users/RCB3/Downloads/simple_wnba.csv", row.names = FALSE)
+simple_nba <- read_csv("CSVs/simple_nba.csv")
+simple_wnba <- read_csv("CSVs/simple_wnba.csv")
 
 
 
 #Combining Datasets
 
 mod_simple_wnba <- simple_wnba %>% 
-  select('Player Name', Salary, GP:BLK) %>% 
-  mutate(league = "WNBA")
+  select('PLAYER', X2024.SALARY, G:BLK) %>% 
+  mutate(league = "WNBA") %>%
+  rename('Salary' = X2024.SALARY, 'GP' = G, 'Total Minutes' = MIN, 'Player Name' = PLAYER)
 mod_simple_nba <- simple_nba %>% 
   select(Player.Name, Salary, GP:PTS, Total.Minutes) %>% 
   relocate(Total.Minutes, .after = GS) %>% 
@@ -54,7 +37,7 @@ Pay_gap_summary_table <- combined_data %>%
     
     
   )
-View(Pay_gap_summary_table)
+data.frame(Pay_gap_summary_table)
 
 
   

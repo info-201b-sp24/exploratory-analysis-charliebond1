@@ -1,9 +1,3 @@
----
-  title: "NBA & WNBA Summary Info"
-author: "Charlie Bond"
-date: "2024-05-17"
-output: html_document
----
 
 
 #Loading useful Packages 
@@ -20,44 +14,26 @@ library(ggplot2)
 #Loading Datasets
 
 
-nba <- read_csv("C:/Users/RCB3/Downloads/NBA Player Salaries (2022-23 Season)_exported.csv")
-wnba <- read_xlsx("C:/Users/RCB3/Downloads/WNBA STATS (1).xlsx")
-
-#Trimming Datasets
-
-
-
-simple_nba <- nba %>% 
-  select(`Player Name`:GS, AST, STL, BLK, PTS, FG, FGA, `Total Minutes`)
-simple_wnba <- wnba %>% 
-  select(PLAYER:PTS, AST, STL, BLK, FGM, FGA)
-simple_nba <- data.frame(simple_nba)
-write.csv(simple_nba, "C:/Users/RCB3/Downloads/simple_nba.csv", row.names = FALSE)
-simple_wnba <- data.frame(simple_wnba)
-write.csv(simple_wnba, "C:/Users/RCB3/Downloads/simple_wnba.csv", row.names = FALSE)
-
-
-
+simple_nba <- read_csv("CSVs/simple_nba.csv")
+simple_wnba <- read_csv("CSVs/simple_wnba.csv")
 
 
 
 #Combining Datasets
 
 mod_simple_wnba <- simple_wnba %>% 
-  select("Player Name", Salary, GP:BLK) %>% 
-  mutate(league = "WNBA")
+  select('PLAYER', X2024.SALARY, G:BLK) %>% 
+  mutate(league = "WNBA") %>%
+  rename('Salary' = X2024.SALARY, 'GP' = G, 'Total Minutes' = MIN, 'Player Name' = PLAYER)
 mod_simple_nba <- simple_nba %>% 
   select(Player.Name, Salary, GP:PTS, Total.Minutes) %>% 
   relocate(Total.Minutes, .after = GS) %>% 
   relocate(PTS, .after = Total.Minutes) %>% 
-  rename('Total Minutes' = Total.Minutes, "Player Name" = Player.Name) %>% 
+  rename('Total Minutes' = Total.Minutes, 'Player Name' = Player.Name) %>% 
   mutate(league = "NBA")
 
+
 combined_data <- rbind(mod_simple_nba, mod_simple_wnba)
-
-
-view(mod_simple_nba)
-view(mod_simple_wnba)
 
 
 
@@ -66,7 +42,8 @@ view(mod_simple_wnba)
 combined_data <- combined_data %>% 
   mutate(across(Salary:BLK, ~ as.numeric(replace_na(., 0))))
   
-  
+combined_data <- data.frame(combined_data)
+
 average_performance_stats <- combined_data %>%
   group_by(league) %>% 
   filter(
@@ -81,7 +58,7 @@ average_performance_stats <- combined_data %>%
     avg_salary_per_steal = mean(as.numeric(Salary))/mean(STL, na.rm = T),
     avg_salary_per_block = mean(as.numeric(Salary))/mean(BLK, na.rm = T)
   )
-print(average_performance_stats)
+
 
 fitted_inputs <- average_performance_stats %>% 
   pivot_longer(
@@ -92,8 +69,6 @@ fitted_inputs <- average_performance_stats %>%
 fitted_inputs$PerformanceStats <- gsub("avg_salary_per", "", fitted_inputs$PerformanceStats)
 
 
-
-view(combined_data)
 
 
 #The Bar Plot
@@ -108,7 +83,6 @@ performance_statistics_plot <- ggplot(fitted_inputs, aes(x = PerformanceStats, y
     fill = "League"
   ) 
 
-plot(performance_statistics_plot)
 
 
 

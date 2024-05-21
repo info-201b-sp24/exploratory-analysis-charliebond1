@@ -60,7 +60,6 @@ salary transparency in their workspace and careers.
 
 ### Related Work
 
-
 In almost every workplace in the United States, the wage gap impacts how
 much women are paid compared to their male counterparts. Although this
 number has slowly been increasing since the mid-20th century, women
@@ -106,7 +105,7 @@ dataset". The data we found for the Women's league is from
 herhoopstats.com, and the NBA data was found on gigasheet.com. we also
 found data from 2016 by googling "wnba nba salary gap csv".
 
-Who Collected the data?
+$Who Collected the data?$
 
 The WNBA data was collected by technologists at Sportradar, a sports
 technology company affiliated with HerHoopStats. The NBA data was
@@ -114,22 +113,22 @@ uploaded by a community contributor who put the data in CSV format, but
 the information is available to the public by the NBA. The 2016 data was
 found on github.
 
-How was the data collected?
+$How was the data collected?$
 
 The data is made open to public, and was collected and formatted into a
 csv file by technologists from companies such as sportradar.
 
-Why was the data collected?
+$Why was the data collected?$
 
 Typically, this data is collected for use by the media (such as sports
 announcers) and for sports betting purposes.
 
-How many observations (rows) are in your data?
+$How many observations (rows) are in your data?$
 
 The WNBA has information on 130 players, and the NBA dataset has
 information on over 500 players. Combined, there are 630 observations.
 
-How many features (columns) are in the data?
+$How many features (columns) are in the data?$
 
 The original datasets had 27(WNBA) and 52(NBA) features, but we will
 condensed these to the 10 features we felt were most relevant to our
@@ -247,22 +246,19 @@ dollars for every minute of play, while female players in the WNBA only
 made 6,447.84 dollars (a difference of \$5,189.90).
 
 ### Table
-
-```{r}
+```{r aggregatetable, echo = FALSE}
 source("Aggregate Table.R")
-plot(Pay_gap_summary_table)
 ```
 
 This was included to give some general impressions on differences between each league. 
 The stats include Average Playtime per game, and Average Salary per Minute, which gives an idea of how the players are compensated when accounting for differences in the structure of each league. 
-When we want to consider the size of paygap between WNBA players and NBA players, we want to account for these kinds of factors, like how much playtime the average player gets and how many games the average player plays versus how many the average player starts, which inform our understanding of these pay differences across time and other variables. 
+
 
 
 ### Chart 1
 
-#Author: Charlie Bond
-
-```{r}
+##Author: Charlie Bond
+```{r chart1, echo = FALSE}
 source("Chart1_performance_stats.R")
 plot(performance_statistics_plot)
 ```
@@ -270,7 +266,6 @@ plot(performance_statistics_plot)
 This chart takes lookes at average salaries for each league and divides them by various perfomance statistics. 
 The goal of this is to compare the salaries between the leagues accounting for performance and what is rewarded in each league. 
 The ultimate purpose is to show the sheer scale of difference in how players get rewarded in each league, accounting for differences between the leagues. 
-We can see that for every metric, NBA players are compensated in far greater amounts for each performance statistic than WNBA players, but it does vary in terms of the gap. When we want to consider these differences, It helps to get an idea of how much players are getting compensated on average, whether they are contributing greatly to their team or not. 
 =======
 
 
@@ -278,9 +273,9 @@ We can see that for every metric, NBA players are compensated in far greater amo
 
 # Author: Sirinya Hirunviriya
 
-```{r}         
+``` {r chart2, echo = FALSE}        
 source("CHART2_PALMY.R") 
-plot(interactive_plot)
+print(p)
 ```
 
 Purpose: The box plot offers a side-by-side comparison of WNBA and NBA
@@ -308,9 +303,11 @@ narrower range. All these statistical data underscores ongoing need for
 efforts to reduce the inequality in gender pay gap in sports.
 
 ### Chart 3
+#### Author: Aleah Rosner
 
-``` {r}        
-source("Chart3_yeartrends.R") plot(wnba_nba_year_trend_graph)
+```  {r chart3, echo = FALSE}
+source("Chart3_yeartrends.R")
+plot(wnba_nba_year_trend_graph)
 ```
 
 This chart displays the change in average salary in each league between
